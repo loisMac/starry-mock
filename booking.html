@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book | Northline Studio</title>
+  <meta name="description" content="Book your appointment at Northline Studio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Northline Studio home">
+        <span class="brand-mark">N</span>
+        <span class="brand-text">Northline Studio</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Primary">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#team">Team</a>
+        <a href="index.html#gallery">Space</a>
+        <a href="index.html#visit">Visit</a>
+        <a href="account.html">Portal</a>
+        <a class="button ghost" href="booking.html" aria-current="page">Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="booking-main">
+    <section class="booking-hero section-reveal">
+      <div class="container booking-hero-grid">
+        <div>
+          <p class="eyebrow">Online Booking</p>
+          <h1>Pick your service, your barber, and your perfect slot.</h1>
+          <p class="lead">Slots update in real time from the studio booking API. Once booked, your appointment syncs across all connected devices.</p>
+        </div>
+        <div class="image-tile booking-image">
+          <img src="assets/img/placeholder-booking.svg" alt="Booking page visual placeholder" />
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-layout section-reveal">
+      <div class="container booking-grid">
+        <article class="booking-card">
+          <h2>Book appointment</h2>
+          <form id="booking-form" novalidate>
+            <div class="field">
+              <label for="client-name">Full name</label>
+              <input id="client-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field two-col">
+              <div>
+                <label for="client-email">Email</label>
+                <input id="client-email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div>
+                <label for="client-phone">Phone</label>
+                <input id="client-phone" name="phone" type="tel" autocomplete="tel" required />
+              </div>
+            </div>
+            <div class="field two-col">
+              <div>
+                <label for="service">Service</label>
+                <select id="service" name="service" required></select>
+              </div>
+              <div>
+                <label for="barber">Barber</label>
+                <select id="barber" name="barber" required></select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="appointment-date">Date</label>
+              <input id="appointment-date" name="date" type="date" required />
+            </div>
+
+            <fieldset class="slots">
+              <legend>Available time slots</legend>
+              <p id="slot-message" class="slot-message">Choose a service, barber, and date to load slots.</p>
+              <div id="slot-grid" class="slot-grid" role="radiogroup" aria-label="Available time slots"></div>
+            </fieldset>
+
+            <input type="hidden" id="selected-slot" name="selectedSlot" required />
+
+            <button class="button" type="submit">Confirm booking</button>
+            <p id="form-message" class="form-message" aria-live="polite"></p>
+          </form>
+        </article>
+
+        <aside class="bookings-list-card">
+          <h2>Your upcoming bookings</h2>
+          <p id="booking-account-status" class="small-note">Sign in to your portal to view and manage appointments.</p>
+          <ul id="bookings-list" class="bookings-list"></ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>Northline Studio © 2026</p>
+      <p>Need help? hello@northlinestudio.se</p>
+      <a class="admin-access-link" href="admin.html" aria-label="Studio admin access">Studio access</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

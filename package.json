@@ -1,0 +1,14 @@
+{
+  "name": "northline-studio",
+  "version": "1.0.0",
+  "description": "Northline Studio barber shop website with booking API and admin dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^4.21.2",
+    "nodemailer": "^8.0.3"
+  }
+}

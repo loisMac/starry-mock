@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Northline Studio</title>
+  <meta name="description" content="Northline Studio admin dashboard for schedule and bookings." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Northline Studio home">
+        <span class="brand-mark">N</span>
+        <span class="brand-text">Northline Studio</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Primary">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#team">Team</a>
+        <a href="index.html#gallery">Space</a>
+        <a href="index.html#visit">Visit</a>
+        <a href="account.html">Portal</a>
+        <a href="booking.html">Book</a>
+        <a class="button ghost" href="admin.html" aria-current="page">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="booking-main">
+    <section class="booking-hero section-reveal">
+      <div class="container booking-hero-grid">
+        <div>
+          <p class="eyebrow">Staff Operations</p>
+          <h1>Set barber schedules and monitor bookings in real time.</h1>
+          <p class="lead">Use this panel to adjust daily hours, block specific slots, and review or cancel appointments for each barber.</p>
+        </div>
+        <div class="image-tile booking-image">
+          <img src="assets/img/placeholder-interior.svg" alt="Admin page visual placeholder" />
+        </div>
+      </div>
+    </section>
+
+    <section id="admin-app" class="booking-layout section-reveal">
+      <div id="admin-auth-wrap" class="container admin-auth-wrap">
+        <article class="booking-card auth-card">
+          <h2>Admin sign in</h2>
+          <p class="small-note">Enter the studio admin password to access schedule controls.</p>
+          <form id="admin-login-form" novalidate>
+            <div class="field">
+              <label for="admin-password">Password</label>
+              <input id="admin-password" name="password" type="password" autocomplete="current-password" required />
+            </div>
+            <button class="button" type="submit">Sign in</button>
+            <p id="admin-auth-message" class="form-message" aria-live="polite"></p>
+          </form>
+        </article>
+      </div>
+
+      <div id="admin-dashboard" class="container admin-grid hidden">
+        <article class="booking-card">
+          <div class="admin-top-row">
+            <h2>Schedule manager</h2>
+            <button id="admin-logout-btn" class="button ghost" type="button">Sign out</button>
+          </div>
+          <form id="schedule-form" novalidate>
+            <div class="field two-col">
+              <div>
+                <label for="admin-barber">Barber</label>
+                <select id="admin-barber" name="barber" required></select>
+              </div>
+              <div>
+                <label for="admin-date">Date</label>
+                <input id="admin-date" name="date" type="date" required />
+              </div>
+            </div>
+            <div class="field two-col">
+              <div>
+                <label for="start-hour">Start hour</label>
+                <input id="start-hour" name="startHour" type="number" min="0" max="23" required />
+              </div>
+              <div>
+                <label for="close-hour">Close hour</label>
+                <input id="close-hour" name="closeHour" type="number" min="1" max="24" required />
+              </div>
+            </div>
+
+            <fieldset class="slots">
+              <legend>Block time slots</legend>
+              <p class="slot-message">Checked slots become unavailable for clients.</p>
+              <div id="admin-slot-grid" class="slot-grid"></div>
+            </fieldset>
+
+            <div class="admin-actions">
+              <button class="button" type="submit">Save schedule override</button>
+              <button class="button ghost" id="clear-override-btn" type="button">Clear override</button>
+            </div>
+            <p id="schedule-message" class="form-message" aria-live="polite"></p>
+          </form>
+        </article>
+
+        <aside class="bookings-list-card">
+          <h2>Booking operations</h2>
+          <p id="overview-meta" class="small-note">Select barber and date to view appointments.</p>
+          <ul id="admin-bookings-list" class="bookings-list"></ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>Northline Studio © 2026</p>
+      <p>Admin mode</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

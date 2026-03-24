@@ -1,0 +1,436 @@
+{
+  "config": {
+    "openHour": 9,
+    "closeHour": 20,
+    "slotMinutes": 30
+  },
+  "services": [
+    {
+      "id": "structure-cut",
+      "name": "Structure Cut",
+      "duration": 60,
+      "price": 790
+    },
+    {
+      "id": "express-refresh",
+      "name": "Express Refresh",
+      "duration": 30,
+      "price": 520
+    },
+    {
+      "id": "beard-architecture",
+      "name": "Beard Architecture",
+      "duration": 30,
+      "price": 490
+    },
+    {
+      "id": "complete-session",
+      "name": "Complete Session",
+      "duration": 90,
+      "price": 1090
+    }
+  ],
+  "barbers": [
+    {
+      "id": "mikael",
+      "name": "Mikael Sjöberg"
+    },
+    {
+      "id": "elin",
+      "name": "Elin Norström"
+    },
+    {
+      "id": "johan",
+      "name": "Johan Linde"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "NL-MN4PXO57-ICUS",
+      "name": "lois macleod",
+      "email": "loismac1@hotmail.co.uk",
+      "phone": "+447534032171",
+      "serviceId": "structure-cut",
+      "serviceName": "Structure Cut",
+      "serviceDuration": 60,
+      "barberId": "mikael",
+      "barberName": "Mikael Sjöberg",
+      "date": "2026-03-24",
+      "time": "15:00",
+      "createdAt": "2026-03-24T14:37:09.883Z",
+      "customerId": null
+    },
+    {
+      "id": "NL-MN4QWRTC-ELLC",
+      "name": "Booking Smoke",
+      "email": "book.smoke@example.com",
+      "phone": "+4600000001",
+      "serviceId": "structure-cut",
+      "serviceName": "Structure Cut",
+      "serviceDuration": 60,
+      "barberId": "mikael",
+      "barberName": "Mikael Sjöberg",
+      "date": "2026-03-26",
+      "time": "09:00",
+      "createdAt": "2026-03-24T15:04:27.600Z",
+      "customerId": null
+    },
+    {
+      "id": "NL-MN4QXK83-HISV",
+      "name": "Booking Smoke",
+      "email": "book.smoke@example.com",
+      "phone": "+4600000001",
+      "serviceId": "structure-cut",
+      "serviceName": "Structure Cut",
+      "serviceDuration": 60,
+      "barberId": "mikael",
+      "barberName": "Mikael Sjöberg",
+      "date": "2026-03-26",
+      "time": "10:00",
+      "createdAt": "2026-03-24T15:05:04.419Z",
+      "customerId": null
+    },
+    {
+      "id": "NL-MN4SDUXC-ISFD",
+      "name": "lois macleod",
+      "email": "lois.frontend@gmail.com",
+      "phone": "+447534032171",
+      "serviceId": "structure-cut",
+      "serviceName": "Structure Cut",
+      "serviceDuration": 60,
+      "barberId": "johan",
+      "barberName": "Johan Linde",
+      "date": "2026-03-24",
+      "time": "16:30",
+      "createdAt": "2026-03-24T15:45:44.400Z",
+      "customerId": "CU-MN4RPSUP-RM0YS"
+    }
+  ],
+  "scheduleOverrides": {
+    "2026-03-24::mikael": {
+      "startHour": 9,
+      "closeHour": 20,
+      "blockedSlots": [
+        "13:30",
+        "14:00"
+      ]
+    },
+    "2026-03-24::elin": {
+      "startHour": 0,
+      "closeHour": 1,
+      "blockedSlots": [
+        "00:00",
+        "00:30"
+      ]
+    },
+    "2026-03-24::johan": {
+      "startHour": 9,
+      "closeHour": 20,
+      "blockedSlots": [
+        "13:30",
+        "14:00"
+      ]
+    }
+  },
+  "customers": [
+    {
+      "id": "CU-MN4QV58T-UQSC5",
+      "name": "Smoke Test",
+      "email": "smoke.1774364591624@example.com",
+      "phone": "+4600000000",
+      "passwordHash": "ff1eb0a10e374ad8ec7a7e2b688e01d1:e9bcea1e99a69cbd3cef53938755de86880c32e5a8734e8cfb4fc426f6677997e3c0da8b390a534875262682e6d6ece679fe8c0bef27461bb9d0c0bae722dac5",
+      "createdAt": "2026-03-24T15:03:11.729Z",
+      "emailVerified": false
+    },
+    {
+      "id": "CU-MN4QW3G5-V5RAQ",
+      "name": "Smoke Test",
+      "email": "smoke.1774364635943@example.com",
+      "phone": "+4600000000",
+      "passwordHash": "2c96a449432c85009191dcce06f6ab4d:2a5ceda1803c4c42be703a659ddd664a3896c16ff7d40da7703d7558d817202a7532d6ec32a8f8a4ac5a477772fcc26f7fb4569c10ac5bcc67aa06b91316e0ef",
+      "emailVerified": true,
+      "createdAt": "2026-03-24T15:03:56.065Z"
+    },
+    {
+      "id": "CU-MN4RIBZF-3N5RZ",
+      "name": "Flow Test",
+      "email": "flow.test.20260324@example.com",
+      "phone": "+4600111222",
+      "passwordHash": "c33ea44a63cd21acea30fa0644cc27a3:c7a3b717ab7feda0d4805ec66371239f04aa39c6421e5a200c43683126354fd41264aeb46aa9dd3a78cf0687c16dbeda2ad74af76f7424486d38d5b13e91fec8",
+      "emailVerified": false,
+      "createdAt": "2026-03-24T15:21:13.571Z"
+    },
+    {
+      "id": "CU-MN4RKSXT-OHO39",
+      "name": "Flow Test Two",
+      "email": "flow.test.two.20260324@example.com",
+      "phone": "+4600222333",
+      "passwordHash": "c06c14855ec22442cfce95260e2eb996:c8e928e4b970ebc7897b8bc5499f5dca247cdd369bdb5a8f9b097f873caabaed2956b05077c3834195f6f0e86cc36151d25d8e264300d59bcec300033b3b9a6e",
+      "emailVerified": false,
+      "createdAt": "2026-03-24T15:23:08.844Z"
+    },
+    {
+      "id": "CU-MN4RNH5F-TRB17",
+      "name": "Diag User",
+      "email": "diag.user.20260324@example.com",
+      "phone": "+4600333444",
+      "passwordHash": "75484a70042938b8638b5c81c299de79:b9f69348c48885b3a28dccb5d845ac98f8ce07fba8df650e4f634aba3c41284512927eefc0f0af043c196fd22c5411235494bbb748a0c5901d3d8fac7701787a",
+      "emailVerified": false,
+      "createdAt": "2026-03-24T15:25:13.545Z"
+    },
+    {
+      "id": "CU-MN4RPSUP-RM0YS",
+      "name": "lois macleod",
+      "email": "lois.frontend@gmail.com",
+      "phone": "+447534032171",
+      "passwordHash": "ba73d57806c5ecab0b02bbca47df3921:83c7ad53fb8554be0b6ffd6401dbafe40a671bf10d8df24f90023418e29621341c9cb75498c12e6b9d15640dc65537e7af13644bfc532cefc183e2a4314a1c60",
+      "emailVerified": true,
+      "createdAt": "2026-03-24T15:27:02.043Z"
+    },
+    {
+      "id": "CU-MN4RSAA5-R0T1W",
+      "name": "Verify Demo",
+      "email": "verify.demo.1774366137@example.com",
+      "phone": "+4600444555",
+      "passwordHash": "15a752f31e2cb7962e6d4c543b908946:80db4c03741193429b045bd9241d22cc4e7bbc4f33accdd2cdd18b758d8ab09d857c06a018788a665e491daf12cd178bade50265ffa7a11f6768b4dd5fdbb8e1",
+      "emailVerified": false,
+      "createdAt": "2026-03-24T15:28:57.910Z"
+    },
+    {
+      "id": "CU-MN4RWJO1-UWOB5",
+      "name": "SMTP Check",
+      "email": "smtp.check.1774366336@example.com",
+      "phone": "+4600666777",
+      "passwordHash": "30969bdd0cd24426e2ed04f2f17ac4a5:a0fb3b00fe20f64fce2e8d945a2a0c7f4a806ebf81afe346ec52e3b2dda48570148ef85224aad6025970d071205befd383b947a0f4867e57cf1a7ac28aace5f1",
+      "emailVerified": false,
+      "createdAt": "2026-03-24T15:32:16.700Z"
+    },
+    {
+      "id": "CU-MN4S97XI-O8GM8",
+      "name": "Lois Verify Test",
+      "email": "lois.frontend+verifytest@gmail.com",
+      "phone": "+4600777888",
+      "passwordHash": "c436f69a69690dd20e9eab5b809beef1:609a685331522538269b7f5b15ef64763b7eaf0a27806add5bb3405c29174c7be3ad5adbc1b596e11968c8c41c74a04021d3bc4077b8572d70c6c0023ebd5e13",
+      "emailVerified": true,
+      "createdAt": "2026-03-24T15:42:08.018Z"
+    }
+  ],
+  "emailOutbox": [
+    {
+      "id": "MAIL-MN4QW3HJ-P2RSKB",
+      "from": "Northline Studio <hello@northlinestudio.se>",
+      "to": "smoke.1774364635943@example.com",
+      "subject": "Verify your Northline Studio account",
+      "template": "customer-verification",
+      "payload": {
+        "customerName": "Smoke Test",
+        "verifyUrl": "http://localhost:3000/account.html?verify=f35c342cd2f9c28d2169e2f93dff7fc6fe4c47a6af4c0d43",
+        "token": "f35c342cd2f9c28d2169e2f93dff7fc6fe4c47a6af4c0d43"
+      },
+      "status": "queued",
+      "createdAt": "2026-03-24T15:03:56.071Z"
+    },
+    {
+      "id": "MAIL-MN4QW3KI-W1PXJ9",
+      "from": "Northline Studio <hello@northlinestudio.se>",
+      "to": "smoke.1774364635943@example.com",
+      "subject": "Reset your Northline Studio password",
+      "template": "customer-password-reset",
+      "payload": {
+        "customerName": "Smoke Test",
+        "resetUrl": "http://localhost:3000/account.html?reset=7ba69c8ee418137937420805fc36c535a7fee691e4d65c3a",
+        "token": "7ba69c8ee418137937420805fc36c535a7fee691e4d65c3a"
+      },
+      "status": "queued",
+      "createdAt": "2026-03-24T15:03:56.178Z"
+    },
+    {
+      "id": "MAIL-MN4QWRTC-0JSZUT",
+      "from": "Northline Studio <hello@northlinestudio.se>",
+      "to": "book.smoke@example.com",
+      "subject": "Northline Studio booking confirmation",
+      "template": "booking-confirmation",
+      "payload": {
+        "bookingId": "NL-MN4QWRTC-ELLC",
+        "customerName": "Booking Smoke",
+        "serviceName": "Structure Cut",
+        "barberName": "Mikael Sjöberg",
+        "date": "2026-03-26",
+        "time": "09:00"
+      },
+      "status": "queued",
+      "createdAt": "2026-03-24T15:04:27.600Z"
+    },
+    {
+      "id": "MAIL-MN4QXK83-6JB40Q",
+      "from": "Northline Studio <hello@northlinestudio.se>",
+      "to": "book.smoke@example.com",
+      "subject": "Northline Studio booking confirmation",
+      "template": "booking-confirmation",
+      "payload": {
+        "bookingId": "NL-MN4QXK83-HISV",
+        "customerName": "Booking Smoke",
+        "serviceName": "Structure Cut",
+        "barberName": "Mikael Sjöberg",
+        "date": "2026-03-26",
+        "time": "10:00"
+      },
+      "status": "queued",
+      "createdAt": "2026-03-24T15:05:04.419Z"
+    },
+    {
+      "id": "MAIL-MN4RIC12-7OEE80",
+      "from": "Northline Studio <hello@northlinestudio.se>",
+      "to": "flow.test.20260324@example.com",
+      "subject": "Verify your Northline Studio account",
+      "template": "customer-verification",
+      "payload": {
+        "customerName": "Flow Test",
+        "verifyUrl": "http://localhost:3000/account.html?verify=4f81d53281ca13af1e6d85306d31bbc6f9b1978dd4d9a56c",
+        "token": "4f81d53281ca13af1e6d85306d31bbc6f9b1978dd4d9a56c"
+      },
+      "status": "queued",
+      "createdAt": "2026-03-24T15:21:13.574Z"
+    },
+    {
+      "id": "MAIL-MN4RKSZ1-6V8PBY",
+      "from": "Northline Studio <hello@northlinestudio.se>",
+      "to": "flow.test.two.20260324@example.com",
+      "subject": "Verify your Northline Studio account",
+      "template": "customer-verification",
+      "payload": {
+        "customerName": "Flow Test Two",
+        "verifyUrl": "http://localhost:3000/account.html?verify=ebce66890cb24d5ecfeb018bf645808419458effe509828a",
+        "token": "ebce66890cb24d5ecfeb018bf645808419458effe509828a"
+      },
+      "status": "queued",
+      "createdAt": "2026-03-24T15:23:08.845Z"
+    },
+    {
+      "id": "MAIL-MN4RNH6X-XFC1K5",
+      "from": "Northline Studio <hello@northlinestudio.se>",
+      "to": "diag.user.20260324@example.com",
+      "subject": "Verify your Northline Studio account",
+      "template": "customer-verification",
+      "payload": {
+        "customerName": "Diag User",
+        "verifyUrl": "http://localhost:3000/account.html?verify=b722eebcb6f614a1ff15e1437f3d6e5dfcdb69338c5618df",
+        "token": "b722eebcb6f614a1ff15e1437f3d6e5dfcdb69338c5618df"
+      },
+      "status": "queued",
+      "createdAt": "2026-03-24T15:25:13.545Z"
+    },
+    {
+      "id": "MAIL-MN4RPSWR-KD2FHN",
+      "from": "Northline Studio <hello@northlinestudio.se>",
+      "to": "lois.frontend@gmail.com",
+      "subject": "Verify your Northline Studio account",
+      "template": "customer-verification",
+      "payload": {
+        "customerName": "lois macleod",
+        "verifyUrl": "http://localhost:3000/account.html?verify=1f372e95fdb252d368aebcc855a9e265bb17ce06c06fdead",
+        "token": "1f372e95fdb252d368aebcc855a9e265bb17ce06c06fdead"
+      },
+      "status": "queued",
+      "createdAt": "2026-03-24T15:27:02.043Z"
+    },
+    {
+      "id": "MAIL-MN4RSABB-BO0OR7",
+      "from": "Northline Studio <hello@northlinestudio.se>",
+      "to": "verify.demo.1774366137@example.com",
+      "subject": "Verify your Northline Studio account",
+      "template": "customer-verification",
+      "payload": {
+        "customerName": "Verify Demo",
+        "verifyUrl": "http://localhost:3000/account.html?verify=9a75ff0099784bc2983b26b481681ecf1d6d1be70177df6d",
+        "token": "9a75ff0099784bc2983b26b481681ecf1d6d1be70177df6d"
+      },
+      "status": "queued",
+      "createdAt": "2026-03-24T15:28:57.911Z"
+    },
+    {
+      "id": "MAIL-MN4RWJP8-17GMLA",
+      "from": "Northline Studio <hello@northlinestudio.se>",
+      "to": "smtp.check.1774366336@example.com",
+      "subject": "Verify your Northline Studio account",
+      "template": "customer-verification",
+      "payload": {
+        "customerName": "SMTP Check",
+        "verifyUrl": "http://localhost:3000/account.html?verify=58440ca297e72b35760dd4763fed2b41e93138934906cc6b",
+        "token": "58440ca297e72b35760dd4763fed2b41e93138934906cc6b"
+      },
+      "status": "preview",
+      "provider": "preview",
+      "createdAt": "2026-03-24T15:32:16.700Z"
+    },
+    {
+      "id": "MAIL-MN4RYLZ3-EZ3C5G",
+      "from": "Northline Studio <hello@northlinestudio.se>",
+      "to": "lois.frontend@gmail.com",
+      "subject": "Verify your Northline Studio account",
+      "template": "customer-verification",
+      "payload": {
+        "customerName": "lois macleod",
+        "verifyUrl": "http://localhost:3000/account.html?verify=963e9bf20b5b09ec7980f50b1fd99c5d5433f2114aa6264c",
+        "token": "963e9bf20b5b09ec7980f50b1fd99c5d5433f2114aa6264c"
+      },
+      "status": "preview",
+      "provider": "preview",
+      "createdAt": "2026-03-24T15:33:52.959Z"
+    },
+    {
+      "id": "MAIL-MN4S97YQ-Z0C1O1",
+      "from": "Northline Studio <lois.frontend@gmail.com>",
+      "to": "lois.frontend+verifytest@gmail.com",
+      "subject": "Verify your Northline Studio account",
+      "template": "customer-verification",
+      "payload": {
+        "customerName": "Lois Verify Test",
+        "verifyUrl": "http://localhost:3000/account.html?verify=bcd975d465d417afaf25da54fbc40692019bb38f6ff44d54",
+        "token": "bcd975d465d417afaf25da54fbc40692019bb38f6ff44d54"
+      },
+      "status": "sent",
+      "provider": "smtp",
+      "createdAt": "2026-03-24T15:42:08.018Z",
+      "providerMessageId": "<f94819f5-f294-8e69-b656-45e0c60fc58d@gmail.com>",
+      "sentAt": "2026-03-24T15:42:09.338Z"
+    },
+    {
+      "id": "MAIL-MN4SCZ94-5I821M",
+      "from": "Northline Studio <lois.frontend@gmail.com>",
+      "to": "lois.frontend@gmail.com",
+      "subject": "Verify your Northline Studio account",
+      "template": "customer-verification",
+      "payload": {
+        "customerName": "lois macleod",
+        "verifyUrl": "http://localhost:3000/account.html?verify=801726534b40f9af0f3be4b26fbb5e0ab580b46c53cb2e28",
+        "token": "801726534b40f9af0f3be4b26fbb5e0ab580b46c53cb2e28"
+      },
+      "status": "sent",
+      "provider": "smtp",
+      "createdAt": "2026-03-24T15:45:03.352Z",
+      "providerMessageId": "<2dc14a44-6abf-51f7-34df-0b011f4d9dfb@gmail.com>",
+      "sentAt": "2026-03-24T15:45:05.256Z"
+    },
+    {
+      "id": "MAIL-MN4SDUXC-D28EDH",
+      "from": "Northline Studio <lois.frontend@gmail.com>",
+      "to": "lois.frontend@gmail.com",
+      "subject": "Northline Studio booking confirmation",
+      "template": "booking-confirmation",
+      "payload": {
+        "bookingId": "NL-MN4SDUXC-ISFD",
+        "customerName": "lois macleod",
+        "serviceName": "Structure Cut",
+        "barberName": "Johan Linde",
+        "date": "2026-03-24",
+        "time": "16:30"
+      },
+      "status": "sent",
+      "provider": "smtp",
+      "createdAt": "2026-03-24T15:45:44.400Z",
+      "providerMessageId": "<04dc8f30-fe47-9219-9a14-63cd103727c8@gmail.com>",
+      "sentAt": "2026-03-24T15:45:45.839Z"
+    }
+  ]
+}

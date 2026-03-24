@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Booking visual placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d0dbd3" />
+      <stop offset="100%" stop-color="#b5c3b9" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g)" />
+  <rect x="190" y="120" width="820" height="660" rx="30" fill="#eef4f0" opacity="0.68" />
+  <rect x="320" y="230" width="560" height="56" rx="12" fill="#d8e3dc" />
+  <rect x="320" y="320" width="560" height="56" rx="12" fill="#d8e3dc" />
+  <rect x="320" y="410" width="560" height="56" rx="12" fill="#d8e3dc" />
+  <text x="50%" y="90%" text-anchor="middle" fill="#1f2421" font-size="42" font-family="Sora, Arial, sans-serif">Booking Visual Placeholder</text>
+</svg>

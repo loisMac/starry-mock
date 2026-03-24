@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Portal | Northline Studio</title>
+  <meta name="description" content="Northline Studio client portal for account login, bookings, and appointment management." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Northline Studio home">
+        <span class="brand-mark">N</span>
+        <span class="brand-text">Northline Studio</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Primary">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#team">Team</a>
+        <a href="index.html#gallery">Space</a>
+        <a href="index.html#visit">Visit</a>
+        <a href="booking.html">Book</a>
+        <a class="button ghost" href="account.html" aria-current="page">Portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="booking-main">
+    <section class="booking-hero section-reveal">
+      <div class="container booking-hero-grid">
+        <div>
+          <p class="eyebrow">Client Portal</p>
+          <h1>Manage your appointments with a private account.</h1>
+          <p class="lead">Sign in to see your upcoming sessions, cancel when needed, and speed up checkout on future bookings.</p>
+        </div>
+        <div class="image-tile booking-image">
+          <img src="assets/img/placeholder-detail.svg" alt="Client portal visual placeholder" />
+        </div>
+      </div>
+    </section>
+
+    <section id="customer-app" class="booking-layout section-reveal">
+      <div id="customer-auth-wrap" class="container account-grid">
+        <article class="booking-card">
+          <h2>Sign in</h2>
+          <form id="customer-login-form" novalidate>
+            <div class="field">
+              <label for="customer-login-email">Email</label>
+              <input id="customer-login-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="customer-login-password">Password</label>
+              <input id="customer-login-password" name="password" type="password" autocomplete="current-password" required />
+            </div>
+            <button class="button" type="submit">Sign in</button>
+            <p id="customer-login-message" class="form-message" aria-live="polite"></p>
+          </form>
+
+          <hr class="divider" />
+
+          <form id="customer-reset-request-form" novalidate>
+            <h3>Forgot password?</h3>
+            <div class="field">
+              <label for="customer-reset-email">Account email</label>
+              <input id="customer-reset-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <button class="button minimal" type="submit">Send reset link</button>
+            <p id="customer-reset-request-message" class="form-message" aria-live="polite"></p>
+          </form>
+        </article>
+
+        <article class="booking-card">
+          <h2>Create account</h2>
+          <form id="customer-register-form" novalidate>
+            <div class="field">
+              <label for="customer-register-name">Full name</label>
+              <input id="customer-register-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field two-col">
+              <div>
+                <label for="customer-register-email">Email</label>
+                <input id="customer-register-email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div>
+                <label for="customer-register-phone">Phone</label>
+                <input id="customer-register-phone" name="phone" type="tel" autocomplete="tel" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="customer-register-password">Password</label>
+              <input id="customer-register-password" name="password" type="password" autocomplete="new-password" minlength="8" required />
+            </div>
+            <button class="button" type="submit">Create account</button>
+            <p id="customer-register-message" class="form-message" aria-live="polite"></p>
+          </form>
+
+          <hr class="divider" />
+
+          <form id="customer-resend-verification-form" novalidate>
+            <h3>Resend verification</h3>
+            <div class="field">
+              <label for="customer-resend-email">Unverified account email</label>
+              <input id="customer-resend-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <button class="button minimal" type="submit">Resend email</button>
+            <p id="customer-resend-message" class="form-message" aria-live="polite"></p>
+          </form>
+
+          <form id="customer-reset-complete-form" class="hidden" novalidate>
+            <h3>Set new password</h3>
+            <p class="small-note">Your reset token was detected from the link.</p>
+            <div class="field">
+              <label for="customer-reset-new-password">New password</label>
+              <input id="customer-reset-new-password" name="newPassword" type="password" minlength="8" required />
+            </div>
+            <button class="button" type="submit">Update password</button>
+            <p id="customer-reset-complete-message" class="form-message" aria-live="polite"></p>
+          </form>
+        </article>
+      </div>
+
+      <div id="customer-dashboard" class="container account-dashboard hidden">
+        <article class="booking-card">
+          <div class="admin-top-row">
+            <h2 id="customer-greeting">Welcome</h2>
+            <button id="customer-logout-btn" class="button ghost" type="button">Sign out</button>
+          </div>
+          <p class="small-note">Your portal tracks all bookings made while signed in.</p>
+          <a class="button minimal" href="booking.html">Book a new appointment</a>
+        </article>
+
+        <aside class="bookings-list-card">
+          <h2>Your appointments</h2>
+          <p id="customer-bookings-meta" class="small-note">Loading your appointments...</p>
+          <ul id="customer-bookings-list" class="bookings-list"></ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>Northline Studio © 2026</p>
+      <p>Client care • hello@northlinestudio.se</p>
+      <a class="admin-access-link" href="admin.html" aria-label="Studio admin access">Studio access</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
