@@ -1,6 +1,6 @@
 # Northline Studio Website
 
-Modern Scandinavian-inspired barber shop website with a real backend booking API and admin dashboard.
+Modern UK-based barber shop website with a real backend booking API and admin dashboard.
 
 ## Included
 
@@ -13,9 +13,13 @@ Modern Scandinavian-inspired barber shop website with a real backend booking API
   - upcoming bookings list and cancellation
 - Admin dashboard with:
   - barber/day schedule overrides
+  - recurring weekday shifts for each barber
+  - lunch break scheduling inside shifts
+  - multi-day holiday/time-off blocks
   - adjustable start and close hours
   - blocked time-slot controls
   - booking list and cancellation actions
+- Staff scheduling login with barber-limited access to their own shifts
 - Client portal with:
   - account registration and login
   - email verification before account sign-in
@@ -79,6 +83,20 @@ Notes:
 - Set `SMTP_SECURE=true` only when using an SSL/TLS port (usually 465).
 - Keep `APP_BASE_URL` set to the URL users open (for verification/reset links).
 - You can check current mode at `/api/health` (`emailMode: smtp` or `preview`).
+
+## Staff logins
+
+Default local demo staff accounts are seeded automatically when no `staffAccounts` are stored yet:
+
+- `mikael@northlinestudio.co.uk`
+- `elin@northlinestudio.co.uk`
+- `johan@northlinestudio.co.uk`
+
+Default password:
+
+- `northline-staff`
+
+You can change the default seed password with `STAFF_SEED_PASSWORD` in `.env` before first use.
 
 ## Notes
 

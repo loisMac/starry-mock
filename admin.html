@@ -47,27 +47,46 @@
     </section>
 
     <section id="admin-app" class="booking-layout section-reveal">
-      <div id="admin-auth-wrap" class="container admin-auth-wrap">
+      <div id="admin-auth-wrap" class="container admin-auth-grid">
         <article class="booking-card auth-card">
           <h2>Admin sign in</h2>
-          <p class="small-note">Enter the studio admin password to access schedule controls.</p>
+          <p class="small-note">Full studio access: bookings, single-day overrides, recurring shifts, and holiday blocks.</p>
           <form id="admin-login-form" novalidate>
             <div class="field">
               <label for="admin-password">Password</label>
               <input id="admin-password" name="password" type="password" autocomplete="current-password" required />
             </div>
-            <button class="button" type="submit">Sign in</button>
+            <button class="button" type="submit">Sign in as admin</button>
             <p id="admin-auth-message" class="form-message" aria-live="polite"></p>
           </form>
+        </article>
+
+        <article class="booking-card auth-card">
+          <h2>Staff sign in</h2>
+          <p class="small-note">Barbers can edit only their own recurring weekly shifts, lunch breaks, holidays, and daily overrides.</p>
+          <form id="staff-login-form" novalidate>
+            <div class="field">
+              <label for="staff-email">Email</label>
+              <input id="staff-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="staff-password">Password</label>
+              <input id="staff-password" name="password" type="password" autocomplete="current-password" required />
+            </div>
+            <button class="button" type="submit">Sign in as staff</button>
+            <p id="staff-auth-message" class="form-message" aria-live="polite"></p>
+          </form>
+          <p class="small-note">Local demo seed accounts use each barber id as the email prefix, for example <strong>mikael@northlinestudio.co.uk</strong>, with password <strong>northline-staff</strong>.</p>
         </article>
       </div>
 
       <div id="admin-dashboard" class="container admin-grid hidden">
         <article class="booking-card">
           <div class="admin-top-row">
-            <h2>Schedule manager</h2>
+            <h2 id="scheduler-title">Schedule manager</h2>
             <button id="admin-logout-btn" class="button ghost" type="button">Sign out</button>
           </div>
+          <p id="scheduler-context" class="small-note">Manage one-off changes or lock in a repeating weekly schedule.</p>
           <form id="schedule-form" novalidate>
             <div class="field two-col">
               <div>
@@ -102,9 +121,131 @@
             </div>
             <p id="schedule-message" class="form-message" aria-live="polite"></p>
           </form>
+
+          <hr class="divider" />
+
+          <form id="weekly-form" novalidate>
+            <h3>Recurring weekly shift</h3>
+            <p class="small-note">Apply the same hours to multiple weekdays for the rest of time, including lunch break.</p>
+
+            <fieldset class="slots">
+              <legend>Weekdays</legend>
+              <div class="weekday-grid">
+                <label class="slot-checkbox"><input type="checkbox" name="weekday" value="1" /> <span>Mon</span></label>
+                <label class="slot-checkbox"><input type="checkbox" name="weekday" value="2" /> <span>Tue</span></label>
+                <label class="slot-checkbox"><input type="checkbox" name="weekday" value="3" /> <span>Wed</span></label>
+                <label class="slot-checkbox"><input type="checkbox" name="weekday" value="4" /> <span>Thu</span></label>
+                <label class="slot-checkbox"><input type="checkbox" name="weekday" value="5" /> <span>Fri</span></label>
+                <label class="slot-checkbox"><input type="checkbox" name="weekday" value="6" /> <span>Sat</span></label>
+                <label class="slot-checkbox"><input type="checkbox" name="weekday" value="0" /> <span>Sun</span></label>
+              </div>
+            </fieldset>
+
+            <div class="field two-col">
+              <div>
+                <label for="weekly-start-hour">Start hour</label>
+                <input id="weekly-start-hour" name="startHour" type="number" min="0" max="23" required />
+              </div>
+              <div>
+                <label for="weekly-close-hour">Close hour</label>
+                <input id="weekly-close-hour" name="closeHour" type="number" min="1" max="24" required />
+              </div>
+            </div>
+
+            <div class="field two-col">
+              <div>
+                <label for="lunch-start">Lunch start</label>
+                <input id="lunch-start" name="lunchStart" type="time" step="1800" />
+              </div>
+              <div>
+                <label for="lunch-end">Lunch end</label>
+                <input id="lunch-end" name="lunchEnd" type="time" step="1800" />
+              </div>
+            </div>
+
+            <div class="admin-actions">
+              <button class="button" type="submit">Save recurring shift</button>
+            </div>
+            <p id="weekly-message" class="form-message" aria-live="polite"></p>
+          </form>
+
+          <ul id="weekly-summary" class="bookings-list compact-list"></ul>
+
+          <hr class="divider" />
+
+          <form id="timeoff-form" novalidate>
+            <h3>Holiday / time off</h3>
+            <p class="small-note">Block multiple consecutive dates in one action.</p>
+            <div class="field two-col">
+              <div>
+                <label for="timeoff-start-date">Start date</label>
+                <input id="timeoff-start-date" name="startDate" type="date" required />
+              </div>
+              <div>
+                <label for="timeoff-end-date">End date</label>
+                <input id="timeoff-end-date" name="endDate" type="date" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="timeoff-label">Label</label>
+              <input id="timeoff-label" name="label" type="text" value="Holiday" />
+            </div>
+            <div class="admin-actions">
+              <button class="button" type="submit">Add holiday block</button>
+            </div>
+            <p id="timeoff-message" class="form-message" aria-live="polite"></p>
+          </form>
+
+          <ul id="timeoff-list" class="bookings-list compact-list"></ul>
+
+          <hr class="divider" />
+
+          <section id="month-calendar-section">
+            <div class="calendar-header">
+              <h3>Monthly overview</h3>
+              <div class="calendar-nav">
+                <button id="cal-prev-btn" class="button ghost cal-nav-btn" type="button">&#8249;</button>
+                <span id="cal-month-label" class="cal-month-label"></span>
+                <button id="cal-next-btn" class="button ghost cal-nav-btn" type="button">&#8250;</button>
+              </div>
+            </div>
+            <div class="cal-weekday-row" aria-hidden="true">
+              <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+            </div>
+            <div id="cal-grid" class="cal-grid" role="grid" aria-label="Monthly schedule overview"></div>
+            <div class="cal-legend">
+              <span class="cal-legend-item"><span class="cal-swatch cal-swatch--off"></span>Holiday / day off</span>
+              <span class="cal-legend-item"><span class="cal-swatch cal-swatch--override"></span>Day override</span>
+              <span class="cal-legend-item"><span class="cal-swatch cal-swatch--weekly"></span>Recurring shift</span>
+            </div>
+          </section>
+
+          <div id="staff-password-section" class="hidden">
+            <hr class="divider" />
+            <form id="staff-password-form" novalidate>
+              <h3>Change password</h3>
+              <p class="small-note">Set a personal password to replace the default staff seed password.</p>
+              <div class="field">
+                <label for="current-password">Current password</label>
+                <input id="current-password" name="currentPassword" type="password" autocomplete="current-password" required />
+              </div>
+              <div class="field">
+                <label for="new-password">New password</label>
+                <input id="new-password" name="newPassword" type="password" autocomplete="new-password" minlength="8" required />
+              </div>
+              <div class="field">
+                <label for="confirm-password">Confirm new password</label>
+                <input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" required />
+              </div>
+              <div class="admin-actions">
+                <button class="button" type="submit">Update password</button>
+              </div>
+              <p id="password-change-message" class="form-message" aria-live="polite"></p>
+            </form>
+          </div>
         </article>
 
-        <aside class="bookings-list-card">
+        <aside id="admin-bookings-panel" class="bookings-list-card">
           <h2>Booking operations</h2>
           <p id="overview-meta" class="small-note">Select barber and date to view appointments.</p>
           <ul id="admin-bookings-list" class="bookings-list"></ul>
